@@ -16,7 +16,7 @@ router.get('/listar', (req, res) => {
 });
 
 router.get('/listar/:id', (req, res) => {
-    if (req.params.id > productos.length - 1 || req.params.id < 0) {
+    if (req.params.id - 1 > productos.length || req.params.id < 0) {
         res.send(JSON.stringify({ error: 'producto no encontrado' }))
 
     } else {
